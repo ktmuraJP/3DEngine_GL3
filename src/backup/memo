@@ -1,0 +1,63 @@
+
+        {
+            ImGui::Begin("parameters");{
+                ImGui::Text("AspectRatio %f",aspectRatio);
+                
+                ImGui::Text("dt %f",projectile.dt);
+                
+                ImGui::Text("projectile xpos %f",projectile.position.x);
+                ImGui::Text("projectile ypos %f",projectile.position.y);
+                ImGui::Text("projectile zpos %f",projectile.position.z);
+                
+                ImGui::Text("projectile vx %f",projectile.velocity.x);
+                ImGui::Text("projectile vy %f",projectile.velocity.y);
+                ImGui::Text("projectile vz %f",projectile.velocity.z);
+
+               
+                ImGui::InputFloat("vx", &projectile.init_velocity.x, 0.1f, 32.0f, "%.1f");
+                ImGui::InputFloat("vy", &projectile.init_velocity.y, 0.1f, 32.0f, "%.1f");
+                ImGui::InputFloat("vz", &projectile.init_velocity.z, 0.1f, 32.0f, "%.1f");
+                
+                ImGui::InputFloat("angle x", &projectile.angles.x, 0.01f, 32.0f, "%.01f");
+                ImGui::Text("sin(angles.x)%f",sin(projectile.angles.x));
+                ImGui::Text("cos(angles.x)%f",cos(projectile.angles.x));
+
+                ImGui::InputFloat("angle y", &projectile.angles.y, 0.01f, 32.0f, "%.01f");
+                ImGui::Text("sin(angles.y)%f",sin(projectile.angles.y));
+                ImGui::Text("cos(angles.y)%f",cos(projectile.angles.y));
+
+                
+                ImGui::InputFloat("view distance", &view_distance, 0.1f, 32.0f, "%.1f");
+                ImGui::InputFloat("Zoom rate", &zoomrate, 0.01f, 32.0f, "%.01f");
+                ImGui::InputFloat("speed rate", &speedrate, 0.01f, 32.0f, "%.01f");
+
+            }ImGui::End();
+        }
+        {
+            ImGui::Begin("light");{
+                
+                ImGui::InputFloat("luster", &block.luster, 0.01f, 32.0f, "%.2f");
+                ImGui::InputFloat("step", &block.step, 0.001f, 32.0f, "%.3f");
+                ImGui::InputFloat("frameambient", 
+                        &block.frameambient, 0.1f, 32.0f, "%.3f");
+                ImGui::InputFloat("ambient", &block.ambient, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("linewidth", &block.linewidth, 0.5f, 4.0f, "%.1f");
+
+                ImGui::InputFloat("color r", &block.color.x, 0.1f, 4.0f, "%.3f");
+                ImGui::InputFloat("color g", &block.color.y, 0.1f, 4.0f, "%.3f");
+                ImGui::InputFloat("color b", &block.color.z, 0.1f, 4.0f, "%.3f");
+
+                ImGui::InputFloat("lpos x", &block.lightPos.x, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("lpos y", &block.lightPos.y, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("lpos z", &block.lightPos.z, 0.01f, 20.0f, "%.3f");
+
+                ImGui::InputFloat("diffuse x", &block.diffuse.x, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("diffuse y", &block.diffuse.y, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("diffuse z", &block.diffuse.z, 0.01f, 20.0f, "%.3f");
+                
+                ImGui::InputFloat("specular x", &block.specular.x, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("specular y", &block.specular.y, 0.01f, 20.0f, "%.3f");
+                ImGui::InputFloat("specular z", &block.specular.z, 0.01f, 20.0f, "%.3f");
+
+            }ImGui::End();
+        } 
